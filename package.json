@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/rakshithatd067/MITM-ANGULARS/issues"
   },
-  "homepage": "https://github.com/rakshithatd067/MITM-ANGULARS#readme"
+  "homepage": "https://github.com/rakshithatd067/MITM-ANGULARS#readme",
+  "devDependencies": {}
 }

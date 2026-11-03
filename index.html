@@ -1,15 +1,26 @@
+
 <!DOCTYPE html>
-<html lang="en"  ng-app="myapp">
+<html lang="en" ng-app="myapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>first angular project</title>
-    <script> src="/node_modules/angular/angular.min.js"</script>
+    <title>First Angular Project</title>
+
+    <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
+
 <body ng-controller="MyController">
-    <h1>student details</h1>
-    <h1>hello{{name}} </h1>
+
+    <h1>Student Details</h1>
+
+    <h2>{{ name }}</h2>
+
+    <h3>Update the Student Name</h3>
+
+    <input type="text" ng-model="name">
+
+    <p>Updated Name: {{ name }}</p>
 
 </body>
 </html>
