@@ -1,26 +1,82 @@
 
 <!DOCTYPE html>
-<html lang="en" ng-app="myapp">
+<html lang="en" ng-app="myApp">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Angular Project</title>
+    <title>Student Registration</title>
 
-    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body ng-controller="MyController">
+<body>
 
-    <h1>Student Details</h1>
+    <div ng-controller="StudentController">
 
-    <h2>{{ name }}</h2>
+        <h1>{{college}}</h1>
 
-    <h3>Update the Student Name</h3>
+        <h2>Student Registration</h2>
 
-    <input type="text" ng-model="name">
+        <!-- Connect input to scope variable -->
+        <label>Student Name:</label>
+        <input type="text" ng-model="studentName">
 
-    <p>Updated Name: {{ name }}</p>
+        <br><br>
+
+        <label>Semester:</label>
+        <input type="number" ng-model="semester">
+
+        <br><br>
+
+        <label>Marks:</label>
+        <input type="number" ng-model="marks">
+
+        <br><br>
+
+        <!-- Display a value -->
+        <p>Student Name: {{studentName}}</p>
+
+        <!-- Call a controller function -->
+        <button ng-click="addStudent()">
+            Add Student
+        </button>
+
+        <br><br>
+
+        <button ng-click="showDetails = !showDetails">
+            Show / Hide Details
+        </button>
+
+        <!-- Show content when condition is true -->
+        <div ng-show="showDetails">
+
+            <h3>Student Details</h3>
+
+            <!-- Repeat an element for every array item -->
+            <ul>
+                <li ng-repeat="student in students">
+                    {{student}}
+                </li>
+            </ul>
+
+            <p>College Name: {{college}}</p>
+
+            <p>Semester: {{semester}}</p>
+
+            <!-- Add/remove content based on a condition -->
+            <p ng-if="marks >= 40">Pass</p>
+
+            <!-- Apply a class based on condition -->
+            <p ng-class="{'pass': marks >= 40, 'fail': marks < 40}">
+                Result
+            </p>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
+
+
